@@ -8,7 +8,7 @@ T = 5
 a = 2.5
 
 # h defines the dimension of the grid. There will be l = h*h centers and 2*l parameters 
-h = 2 
+h = 5 
 l = h*h
 
 # Define the centers as grid on the largest square fitting in the circle
