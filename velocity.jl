@@ -2,7 +2,7 @@ using LinearAlgebra
 using ForwardDiff
 
 
-# Spatial domain is circle centered at origin with radius r. time domain is [0,T]
+# Spatial domain is circle centered at origin with radius r. Time domain is [0,T]. Velocity field decays outside circle with radius a
 r = 3
 T = 5
 a = 2.5
@@ -25,7 +25,7 @@ g(x) = f(x)/(f(x) + f(1-x))
 b(x) = 1 - g( (norm(x) - a^2)/(r^2 - a^2) )
 
 
-# basis 
+# basis function
 varphi(x, ci) = b(x) * exp(norm(x - ci))
 
 # vector of the gradients and curls
@@ -42,10 +42,4 @@ function v(x, theta, t)
     grad, curl = grad_curl_varphi(x)
     sum(theta1[i] * grad[i] for i in 1:l) + sum(theta2[i] * curl[i] for i in 1:l)
 end
-
-
-
-
-
-
 
